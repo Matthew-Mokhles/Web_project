@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOOKS</title>
+    <link rel="stylesheet" href="c.css">
+</head>
+<body>
+
+
+
+    <div class="fullscreen"></div>
+    <script>
+        // After 3 seconds, make the element small
+        setTimeout(() => {
+            document.querySelector('.fullscreen').classList.add('small');
+        }, 1000);
+    </script>
+
+
+
+
+
+    
+    <h1>BOOK<span style="font-weight: normal;">TOPIA</span></h1>
+    <div class="container">
+        <h1 class="id" >AUDIO BOOKS</h1>
+        <div class="book-list">
+            <div class="top-books">
+                <div class="book">
+                    <img src="images/1984 by George Orwel.jpg" alt="Book 1">
+                    <h3>1984</h3>
+                    <p>George Orwell</p>
+                    <div class="book-details">
+                        <p> $10</p>
+                        <button class="buy-button"></button>
+                    </div>
+                </div>
+                <div class="book">
+                    <img src="images/Harry Potter and the Sorcerer's Stone by J.K. Rowling.jpg" alt="Book 2">
+                    <h3>Harry Potter and the Sorcerer's Stone </h3>
+                    <p>J.K. Rowling</p>
+                    <div class="book-details">
+                        <p> $20</p>
+                        <button class="buy-button"></button>
+                    </div>
+                </div>
+                <div class="book">
+                    <img src="images/To Kill a Mockingbird by Harper Lee.jpg" alt="Book 3">
+                    <h3>To Kill a Mockingbird</h3>
+                    <p>Harper Lee</p>
+                    <div class="book-details">
+                        <p> $10</p>
+
+                        <button class="buy-button"></button>
+                    </div>
+                </div>
+                <div class="book">
+                    <img src="images/matt-ridley-How Innovations works.jpg" alt="Book 4">
+                    <h3>How Innovation Works</h3>
+                    <p>Matt Ridley</p>
+                    <div class="book-details">
+                        <p> $10</p>
+
+                        <button class="buy-button"></button>
+                    </div>
+                </div>
+                <div class="book">
+                    <img src="images/Pride and Prejudice by Jane Austen.jpg" alt="Book 5">
+                    <h3>Pride and Prejudice</h3>
+                    <p>Jane Austen</p>
+                    <div class="book-details">
+                        <p> $10</p>
+
+                        <button class="buy-button"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-books">
+                <div class="book">
+                    <img src="images/The Catcher in the Rye by J.D. Salinger.jpg" alt="Book 6">
+                    <h3>The Catcher in the Rye</h3>
+                    <p>J.D. Salinger</p>
+                    <div class="book-details">
+                        <p> $10</p>
+
+                        <button class="buy-button"></button>
+                    </div>
+                </div>
+                <div class="book">
+                    <img src="images/The Great Gatsby.jpg" alt="Book 7">
+                    <h3>The Great Gatsby</h3>
+                    <p>F. Scott Fitzgerald</p>
+                    <div class="book-details">
+                        <p> $10</p>
+
+                        <button class="buy-button"></button>
+                    </div>
+                </div>
+                <div class="book">
+                    <img src="images/The Hobbit by J.R.R. Tolkien.jpg" alt="Book 8">
+                    <h3>The Hobbit</h3>
+                    <p>J.R.R. Tolkien</p>
+                    <div class="book-details">
+                        <p> $10</p>
+
+                        <button class="buy-button"></button>
+                    </div>
+                </div>
+                <div class="book">
+                    <img src="images/The psychology of money.jpg" alt="Book 9">
+                    <h3>The Psychology of Money</h3>
+                    <p>by Morgan Housel</p>
+                    <div class="book-details">
+                        <p> $10</p>
+
+                        <button class="buy-button"></button>
+                    </div>
+                </div>
+                <div class="book">
+                    <img src="images/The Silent Patient by Alex Michaelides.jpg" alt="Book 10">
+                    <h3>The Silent Patient</h3>
+                    <p>Alex Michaelides</p>
+                    <div class="book-details">
+                        <p> $10</p>
+
+                        <button class="buy-button"></button>
+                    </div>
+               
+                </div>
+           
+        </div>
+    </div>
+</div> 
+</body>
+</html>
