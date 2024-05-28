@@ -24,58 +24,60 @@ body {
             filter: blur(1px);
 }
 .container {
-    width: 350px;
+    width: 100%;
+    max-width: 350px;
     background-color: #e8d7c8c4; 
     border-radius: 10px;
+    padding: 0.2rem;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     overflow: hidden;
 }
 
 .header {
     text-align: center;
-    padding: 20px 0;
+    padding: 1em 0;
     color: #333; /* لون النص */
 }
 .form-group label{
     font-weight:600;
-    font-size: 17px;
-    padding-bottom: 6px;
+    font-size: 1.2em;
+    padding-bottom:  0.5em;
     display: block;
     font-family: "Grenze", serif;
 }
 .header h2 {
     margin: 0;
-    font-size: 24px;
+    font-size: 1.8em;
 }
 
 .header p {
-    margin: 10px 0 0;
-    font-size: 14px;
+    margin: 0.3em 0 0;
+    font-size: 1em;
     font-weight: 500;
 }
 
 .login-form {
-    padding: 20px;
+    padding: 1em;
 }
 
 .form-group {
-    margin-bottom: 13px; /* Increase space between label and text field */
-    padding-left: 0px;
-    padding-right: 8px;
+    margin-bottom: 0.5em; /* Increase space between label and text field */
+    padding-left: 0em;
+    padding-right:0.9em;
 }
 
 input[type="text"],
 input[type="email"],
 input[type="password"]{
     width: 100%;
-    padding: 10px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding: 0.7em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
     border: none;
-    border-radius: 10px; /* الشكل البيضاوي */
+    border-radius: 0.7em; /* الشكل البيضاوي */
     background-color: rgba(255, 255, 255, 0.615); /* خلفية شفافة */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    font-size: 16px;
+    box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.1);
+    font-size: 1em;
 }
 
 .button {
@@ -84,13 +86,13 @@ input[type="password"]{
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px auto;
+  margin: 1.5em auto;
   position: relative;
   padding: 0.0098em 2.6em;
   border: #334b72 solid 0.15em;
   border-radius: 3.25em;
   color: #334b72;
-  font-size: 13px;
+  font-size: 0.88em;
   font-weight:700;
   cursor: pointer;
   overflow: hidden;
@@ -176,4 +178,51 @@ input[type="password"]{
 
 .footer a:hover {
     text-decoration: underline;
+}
+
+@media only screen and (max-width: 600px) and (orientation: portrait) {
+  .container {
+    max-width: 80%;
+    padding: 0.5em;
+  }
+
+  .header h2 {
+    font-size: 1.5em;
+  }
+
+  .header p {
+    font-size: 0.9em;
+  }
+
+  .form-group label {
+    font-size: 1em;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    padding: 0.7em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    font-size: 1em;
+  }
+
+  .button {
+    padding: 0.00098em 2em;
+    font-size: 0.9em;
+  }
+
+  .social-icons img {
+    width: 2em;
+    height: 2em;
+  }
+
+  .footer {
+    font-size: 0.8em;
+    margin-top: 12px;
+  }
+
+  .footer a {
+    font-size: 1em;
+  }
 }

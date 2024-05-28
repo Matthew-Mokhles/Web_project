@@ -59,7 +59,7 @@
             align-items: flex-start; 
         }
         .book-info video {
-            max-width: 74%;
+            max-width: 70%;
             max-height: 40%;
             margin-left: 15%;
             margin-top: 2%;
@@ -88,7 +88,7 @@
             text-align: center;
         }
         .button {
-        --width: 100px;
+        --width: 200px;
         --height: 35px;
         --tooltip-height: 35px;
         --tooltip-width: 90px;
@@ -250,7 +250,7 @@
 <header><h1 style="font-family: Playfair Display, serif;">BOOK<span style="font-weight: normal;">TOPIA</span></h1></header>
 <div class="container">
     <div class="book">
-        <img src="images/The psychology of money.jpg" alt="Book Cover">
+        <img src="Books/The psychology of money.jpg" alt="Book Cover">
         <div class="book-info">
             <h2>The psychology of money</h2>
             <p>by Mourgan Housel</p>
@@ -259,15 +259,18 @@
             <video controls autoplay loop muted src="Videos/The Psychology of Money in 20 minutes 00_00_00-00_04_15.mp4"></video>
         </div>
         <div data-tooltip="Price: $20" class="button">
-            <a href="checkout.html" target="_blank" \>
-            <div class="button-wrapper">
-              <div class="text">Buy Now</div>
-                <span class="icon">
-                  <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"></path>
-            </svg>
-                </span>
-              </div>
+            <a id="buy-now-link" href="checkout.php?book=The%20psychology%20of%20money&price=20" target="_blank">
+                <div class="button-wrapper">
+                    <div class="text">Buy Now</div>
+                    <span class="icon">
+                        <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"></path>
+                        </svg>
+                    </span>
+                </div>
+            </a>
+        </div>
+        
             </a>
             </div>            
     </div>
