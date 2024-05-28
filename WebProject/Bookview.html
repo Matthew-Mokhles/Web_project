@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Display</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        .background{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-image: url("images/2712.png");
+            background-size:cover;
+            background-position: center;
+        }
+        .container {
+            max-width: 90%; 
+            margin: 50px auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            background-color: #e8d7c8f0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            display: flex;
+            flex-direction: column; 
+            align-items: center; 
+        }
+        .book {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px; 
+        }
+        .book img {
+            max-width:30%;
+            max-height: 40%;
+            margin-right: 20px;
+            border: 5px solid #385585b5;
+            border-radius: 50px;
+            border-top-right-radius: 0px;
+            border-bottom-left-radius: 0px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .book-info {
+            flex-grow: 1;
+            padding: 2px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; 
+        }
+        .book-info video {
+            max-width: 74%;
+            max-height: 40%;
+            margin-left: 15%;
+            margin-top: 2%;
+            border: 5px solid #385585b5 ;
+            border-radius: 50px;
+            border-top-right-radius: 0px;
+            border-bottom-left-radius: 0px;
+        }
+        h2 {
+            font-size: 24px;
+            margin-bottom: -0.5em;
+            margin-top: 0;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.3;
+            color: #333;
+            padding-left: 1em;
+            margin-bottom: 0;
+        }
+        header{
+            align-self: baseline;
+            margin-bottom:20px ;
+        }
+        header h1{
+            text-align: center;
+        }
+        .button {
+            --width: 100px;
+            --height: 35px;
+            --tooltip-height: 35px;
+            --tooltip-width: 90px;
+            --gap-between-tooltip-to-button: 18px;
+            --button-color: #3b5b86;
+            width: var(--width);
+            height: var(--height);
+            background: var(--button-color);
+            position: relative;
+            text-align: center;
+            border-radius: 0.45em;
+            font-family: "Arial";
+            transition: background 0.3s;
+            align-self: flex-end;
+        }
+
+        .button::before {
+            position: absolute;
+            content: attr(data-tooltip);
+            width: var(--tooltip-width);
+            height: var(--tooltip-height);
+            background-color: #555;
+            font-size: 0.9rem;
+            color: #fff;
+            border-radius: .25em;
+            line-height: var(--tooltip-height);
+            bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) + 10px);
+            left: calc(50% - var(--tooltip-width) / 2);
+        }
+
+        .button::after {
+            position: absolute;
+            content: '';
+            width: 0;
+            height: 0;
+            border: 10px solid transparent;
+            border-top-color: #555;
+            left: calc(50% - 10px);
+            bottom: calc(100% + var(--gap-between-tooltip-to-button) - 10px);
+        }
+
+        .button::after,.button::before {
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s;
+        }
+
+        .text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .button-wrapper,.text,.icon {
+            overflow: hidden;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            color: #fff;
+        }
+
+        .text {
+            top: 0;
+            font-size: 90%;
+        }
+
+        .text,.icon {
+            transition: top 0.5s;
+        }
+
+        .icon {
+            color: #fff;
+            top: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .button:hover {
+            background:#4991ee;
+        }
+
+        .button:hover .text {
+            top: -100%;
+        }
+
+        .button:hover .icon {
+            top: 0;
+        }
+
+        .button:hover:before,.button:hover:after {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .button:hover:after {
+            bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) - 20px);
+        }
+
+        .button:hover:before {
+            bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
+        }
+        @media screen and (max-width: 768px) {
+            .container {
+                max-width: 90%;
+                padding: 10px;
+            }
+
+            .book {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .book img {
+                max-width: 80%;
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+
+            .book-info video {
+                max-width: 90%;
+                margin-left: 0;
+            }
+
+            .button {
+                width: 100%;
+                margin-top: 20px;
+            }
+
+            .button::before {
+                width: 80%;
+                left: 10%;
+            }
+
+            .button::after {
+                left: calc(50% - 10px);
+            }
+
+            .text {
+                font-size: 16px;
+            }
+
+            .icon svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="background"></div>
+<header><h1 style="font-family: Playfair Display, serif;">BOOK<span style="font-weight: normal;">TOPIA</span></h1></header>
+<div class="container">
+    <div class="book">
+        <img src="Books/To Kill a Mockingbird by Harper Lee.jpg" alt="Book Cover">
+        <div class="book-info">
+            <h2>To Kill a Mockingbird</h2>
+            <p>by Harper Lee</p>
+            <p style="padding-left:0%;"><span style="font-weight: bold;font-size: larger;">Description: </span> </p>
+            <p>Harper Lee's timeless classic explores racial injustice and moral growth through the eyes of a young girl in the American South during the 1930s.</p>
+            <video controls autoplay loop muted src="Videos/To Kill a Mockingbird by Harper Lee (Book Summary) - Minute Book Report.mp4"></video>
+        </div>
+        <div data-tooltip="Price: $20" class="button">
+            <a href="checkout.php?book=To%20Kill%20a%20Mockingbird&price=20" target="_blank">
+            <div class="button-wrapper">
+              <div class="text">Buy Now</div>
+                <span class="icon">
+                  <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"></path>
+            </svg>
+                </span>
+              </div>
+            </a>
+        </div>            
+    </div>
+</div>
+
+</body>
+</html>
